@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-crema-100 font-sans text-base font-light text-tierra-700 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-tierra-900;
+  }
+
+  ::selection {
+    @apply bg-oro-200 text-tierra-900;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-oro-500;
+  }
+}
+
+/* ==========================================================================
+   Componentes reutilizables (botones, campos, etiquetas)
+   ========================================================================== */
+@layer components {
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.35em] text-oro-700;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium uppercase tracking-widest transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-salvia-700 text-crema-50 shadow-soft hover:-translate-y-0.5 hover:bg-salvia-800 disabled:hover:translate-y-0;
+  }
+
+  .btn-gold {
+    @apply btn bg-oro-400 text-tierra-900 shadow-gold hover:-translate-y-0.5 hover:bg-oro-300;
+  }
+
+  .btn-ghost {
+    @apply btn border border-salvia-400/60 text-salvia-800 hover:bg-salvia-100 disabled:hover:bg-transparent;
+  }
+
+  .field {
+    @apply w-full rounded-2xl border border-tierra-200 bg-white/80 px-5 py-4 text-lg text-tierra-900 placeholder:text-tierra-300 transition focus:border-oro-400 focus:outline-none focus:ring-4 focus:ring-oro-200/60 disabled:opacity-60;
+  }
+}
+
+/* ==========================================================================
+   Animación de entrada al hacer scroll (directiva v-reveal)
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  animation: reveal-up 0.95s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms) both;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Transiciones de Vue
+   ========================================================================== */
+
+/* Cambio de página */
+.page-enter-active {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.page-leave-active {
+  transition: opacity 0.2s ease;
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.page-leave-to {
+  opacity: 0;
+}
+
+/* Menú móvil */
+.menu-enter-active,
+.menu-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.menu-enter-from,
+.menu-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* Pasos de la encuesta (adelante / atrás) */
+.paso-adelante-enter-active,
+.paso-adelante-leave-active,
+.paso-atras-enter-active,
+.paso-atras-leave-active {
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+.paso-adelante-enter-from,
+.paso-atras-leave-to {
+  opacity: 0;
+  transform: translateX(34px);
+}
+.paso-adelante-leave-to,
+.paso-atras-enter-from {
+  opacity: 0;
+  transform: translateX(-34px);
+}
+
+/* Dígitos de la cuenta atrás */
+.tick-enter-active,
+.tick-leave-active {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.tick-enter-from {
+  opacity: 0;
+  transform: translateY(-40%);
+}
+.tick-leave-to {
+  opacity: 0;
+  transform: translateY(40%);
+}
+
+/* Cambio de fase de la cuenta atrás (antes / hoy / después) */
+.fase-enter-active,
+.fase-leave-active {
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fase-enter-from {
+  opacity: 0;
+  transform: scale(0.96);
+}
+.fase-leave-to {
+  opacity: 0;
+}
+
+/* ==========================================================================
+   Pétalos que caen el día de la boda
+   ========================================================================== */
+.petal {
+  position: absolute;
+  top: -6%;
+  width: var(--size);
+  height: calc(var(--size) * 1.35);
+  border-radius: 100% 0 100% 0;
+  opacity: 0;
+  animation: petal-fall var(--dur) linear var(--delay) infinite;
+}
+.petal-0 {
+  background: rgba(207, 170, 94, 0.85);
+}
+.petal-1 {
+  background: rgba(245, 235, 211, 0.8);
+}
+.petal-2 {
+  background: rgba(143, 170, 131, 0.8);
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--drift), 100vh, 0) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   Accesibilidad: respeta a quien prefiere menos movimiento
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

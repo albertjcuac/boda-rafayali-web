@@ -1,0 +1,11 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "tailwindCSS.includeLanguages": {
+    "vue": "html"
+  }
+}
