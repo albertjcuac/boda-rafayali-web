@@ -13,16 +13,14 @@
 //  Las URLs de abajo son de ejemplo (apuntan a Madrid): sustitúyelas.
 // ---------------------------------------------------------------------------
 export const MAPA_IGLESIA_URL =
-  'https://www.google.com/maps?q=Iglesia+de+San+Jer%C3%B3nimo+el+Real,+Madrid&output=embed'
-
+'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.88132319754!2d-5.995048924807511!3d37.392638772084105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c0569264e8b%3A0x5551ddd7337a70d5!2sIglesia%20de%20la%20Anunciaci%C3%B3n!5e0!3m2!1ses!2ses!4v1793549274032!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">'
 export const MAPA_HACIENDA_URL =
   'https://www.google.com/maps?q=Casa+de+Campo,+Madrid&output=embed'
 
 // Enlaces para abrir cada lugar en la app de Google Maps (botón "Abrir en Google Maps").
 // Puedes pegar aquí el enlace corto que te da el botón "Compartir" (https://maps.app.goo.gl/...).
 export const ENLACE_IGLESIA_URL =
-  'https://www.google.com/maps/search/?api=1&query=Iglesia+de+San+Jer%C3%B3nimo+el+Real,+Madrid'
-
+'https://maps.app.goo.gl/VQ2JSgqvcy6WyVQC7'
 export const ENLACE_HACIENDA_URL =
   'https://www.google.com/maps/search/?api=1&query=Casa+de+Campo,+Madrid'
 
@@ -118,8 +116,8 @@ export const boda = {
     {
       id: 'iglesia',
       etiqueta: 'La ceremonia',
-      nombre: 'Iglesia de San Jerónimo el Real', // ← cambia por el nombre real
-      direccion: 'Calle de Moreto, 4 · Madrid', // ← cambia por la dirección real
+      nombre: 'Iglesia de la Anunciación', // ← cambia por el nombre real
+      direccion: 'C. Laraña, s/n, Casco Antiguo, 41003 Sevilla', // ← cambia por la dirección real
       mapaEmbed: MAPA_IGLESIA_URL,
       mapaEnlace: ENLACE_IGLESIA_URL,
     },
