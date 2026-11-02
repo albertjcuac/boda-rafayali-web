@@ -12,7 +12,9 @@ const imagen = boda.imagenes.historia ? assetUrl(boda.imagenes.historia) : null
     <div class="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2 md:gap-20">
       <!-- Marco en arco para la foto -->
       <div v-reveal class="relative mx-auto w-full max-w-sm md:max-w-md">
-        <div class="absolute -inset-3 translate-x-4 translate-y-4 rounded-b-[2rem] rounded-t-[999px] border border-oro-300" />
+        <div
+          class="absolute -inset-2 translate-x-2 translate-y-2 rounded-b-[2rem] rounded-t-[999px] border border-oro-300 sm:-inset-3 sm:translate-x-4 sm:translate-y-4"
+        />
         <div
           class="relative aspect-[3/4] overflow-hidden rounded-b-[2rem] rounded-t-[999px] bg-gradient-to-br from-salvia-200 via-crema-300 to-oro-200 shadow-soft"
         >
@@ -32,7 +34,7 @@ const imagen = boda.imagenes.historia ? assetUrl(boda.imagenes.historia) : null
       </div>
 
       <div>
-        <SectionTitle align="left" :eyebrow="boda.historia.eyebrow" :title="boda.historia.titulo" />
+        <SectionTitle :eyebrow="boda.historia.eyebrow" :title="boda.historia.titulo" />
         <div class="mt-10 space-y-5 text-lg leading-relaxed text-tierra-700">
           <p v-for="(parrafo, i) in boda.historia.parrafos" :key="i" v-reveal="{ delay: 100 + i * 120 }">
             {{ parrafo }}

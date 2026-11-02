@@ -30,8 +30,8 @@ export const ENLACE_HACIENDA_URL =
 export const boda = {
   // Nombres que aparecen en el título, el menú y el pie de página.
   novios: {
-    primero: 'Rafa',
-    segundo: 'Ali',
+    primero: 'Rafael',
+    segundo: 'Alicia',
   },
 
   // Fecha y hora de la CEREMONIA, en formato ISO 8601 con zona horaria.
@@ -57,7 +57,7 @@ export const boda = {
   // -------------------------------------------------------------------------
   imagenes: {
     hero: '', // Fondo de la portada (horizontal o vertical, se recorta al centro)
-    historia: '', // Foto de la pareja para "Nuestra historia" (mejor vertical, 3:4)
+    historia: 'public/pexels-lauraoliveira-19448264.jpg', // Foto de la pareja para "Nuestra historia" (mejor vertical, 3:4)
   },
 
   // -------------------------------------------------------------------------
@@ -69,7 +69,6 @@ export const boda = {
     parrafos: [
       'Todo empezó con una conversación que ninguno de los dos pensaba alargar tanto. Un café que se enfrió, una tarde que se hizo noche y la sensación de que nos conocíamos desde siempre.',
       'Desde entonces hemos compartido viajes, risas, mudanzas, domingos de sofá y la certeza de que la vida es mejor en compañía. Hoy queremos dar un paso más y celebrarlo con las personas que más queremos.',
-      'Este texto es un ejemplo: cámbialo en src/config/boda.js por vuestra verdadera historia.',
     ],
   },
 
