@@ -57,7 +57,7 @@ export const boda = {
   // -------------------------------------------------------------------------
   imagenes: {
     hero: '', // Fondo de la portada (horizontal o vertical, se recorta al centro)
-    historia: 'public/pexels-lauraoliveira-19448264.jpg', // Foto de la pareja para "Nuestra historia" (mejor vertical, 3:4)
+    historia: 'pexels-lauraoliveira-19448264.jpg', // Foto de la pareja para "Nuestra historia" (mejor vertical, 3:4)
   },
 
   // -------------------------------------------------------------------------
